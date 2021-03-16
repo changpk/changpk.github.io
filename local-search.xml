@@ -4,13 +4,19 @@
   
   
   <entry>
-    <title>Hello World</title>
-    <link href="/2021/03/12/hello-world/"/>
-    <url>/2021/03/12/hello-world/</url>
+    <title>程序员之殇--菠菜骗局</title>
+    <link href="/2019/12/03/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%B9%8B%E6%AE%87-%E8%8F%A0%E8%8F%9C%E9%AA%97%E5%B1%80/"/>
+    <url>/2019/12/03/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%B9%8B%E6%AE%87-%E8%8F%A0%E8%8F%9C%E9%AA%97%E5%B1%80/</url>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>　　本人今年（2019年6月底的时候）由于公司“内部优化”，幸运的中奖了，实际整个开发部都被优化了，负责的APP项目没有一点收益，这种情景相信很多程序员都经历过了。经过和公司的据理力争，我们还是成功的拿到了合理的赔偿（正常的n+1），感觉还是很欣慰的。  </p><p>　　休息了一周，拿到赔偿的兴奋劲一过，想着自己上有老下有两小，年龄还是夕阳红的32，于是乎开始天天晚上焦虑。考虑回家创业，可除了技术，自己好像啥都没积累。自媒体，看着人家拍视频几万几十万甚至百万的收益天天晒，眼红过，嫉妒过，但懦弱内向的性格放弃了；人脉，也就是公司的技术同事了；情商，天天对着电脑屏幕敲键盘，能高到哪里去；职业规划，前几年互联网的红利让自己没有职业危机感，一直是第三方库的搬运工，说句码农不为过。借口千千万，生活总要过。生活的开销不会因为你的失业就停止，思想斗争之后，再次选择了本职工作（有其它路？）。当时定的期限是三个月内找不到就和另外的朋友去学电商了，他现在做的虽没程序员工资高，但收入也是中等了。  </p><p>　　花点钱，买了点原理视频看一看，点开网站，找到leetcode的题目写一写，开始在某勾投简历了（后来知道某boss是现在程序员的简历投递网站，后面会有说明）。由于有大厂（大厂也有码农的，俺就是😭，成长靠自己啊）的“辉煌”经历，小公司的面试还是挺多的，半个多月的面试，从面试题目的生疏到熟悉，基本都是创业型的公司，业务扩张型的，简单总结：你年龄大不好找工作吧，但是有大厂的光环，来了干活肯定没问题吧，工资合适的话，那就可以了，干活是第一位。从几个offer中选择了一个相对来说前景可以，能持续最起码两三年工作的一个公司。这里要填一个坑了：由于在某勾上的信息被一些所谓的“猎头”拿到，可能的骗局就出来了。</p><p>　　看这某勾上的面试邀约，诡异的会发现，出现几个薪资很高，不问你年龄的，交谈中啥都能满足你，但唯一的条件就是出国工作。然后你再去查看相关个人信息都是不完整，发布的公司信息也是不完整。这个时候就要小心了，始终默念：天上不会掉馅饼，掉了也不会砸住我，砸住我了也不一定能吃到。贪图便宜吃大亏的道理放到任何事情上都是适合的，相关文章输入关键字：程序员，菠菜，菲律宾，东南亚，应该很容易查到。　　</p><p>　　写这篇文章的目的主要是看到有些程序员被裁员，急于找工作被骗至外国，强迫搞菠菜的悲催经历所感。人生就是这样，有得必有失；互联网的红利给了我们暴力赚钱的机会，那竞争就只会越来越激烈；当大家享受红利的时候，也要能承受它的压力。虽然我们都着急找工作，都想赶快再赚点钱，但是也千万不要心头一热，踏入别人设的骗局。毕竟这个时代，个人信息其实都已经被泄露了几百遍了。总有别有用心的人，拿着我们的信息去换取钱，俗话说的好：千万别用钱去考验一个人。我们只需要记住：贪便宜吃大亏。遇到很好的offer，又不需要什么能力的，那你就要多长个心眼了，换位思考：我是老板，准备招这人干啥呢😏。</p>]]></content>
     
     
+    
+    <tags>
+      
+      <tag>杂感</tag>
+      
+    </tags>
     
   </entry>
   
