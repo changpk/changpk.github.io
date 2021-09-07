@@ -20,9 +20,25 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-  <title>Hexo</title>
+  <title>HTML的布局学习记录 - Hexo</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
 
 
 
@@ -50,7 +66,7 @@
 
 
 <body>
-  <header style="height: 100vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -149,17 +165,50 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="什么都不去做才会来不及">
+            <span class="h2" id="subtitle" title="HTML的布局学习记录">
               
             </span>
 
             
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-09-07 10:38" pubdate>
+        2021年9月7日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      943 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      10
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
           </div>
 
-          
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
           
         </div>
       </div>
@@ -168,174 +217,136 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          style=margin-top:0>
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/09/07/HTML%E7%9A%84%E5%B8%83%E5%B1%80%E7%9A%84%E5%AD%A6%E4%B9%A0/">HTML的布局学习记录</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/09/07/HTML%E7%9A%84%E5%B8%83%E5%B1%80%E7%9A%84%E5%AD%A6%E4%B9%A0/">
-          
-          
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">HTML的布局学习记录</h1>
             
-          
-          一、盒子模型
-  HTML中的每个元素都是盒子，每个盒子都有margin，border，padding，content构成。
-二、为什么要有盒子模型呢？
-答：举个例子快递小哥在送货前，首先得把商品装车吧， 如果有西瓜、显示屏、瓜子、化妆品等形状各异，直接装的话那画面太难了！但实际中每个商品外面会包装个纸箱或者套个袋子，只需把箱子码好就可以送货了，是不是省事多了。  浏览器在布局的时候也是如此，每个
-        </a>
-      </p>
+            <div class="markdown-body">
+              <p>一、盒子模型</p>
+<p>  HTML中的每个元素都是盒子，每个盒子都有margin，border，padding，content构成。</p>
+<p>二、为什么要有盒子模型呢？</p>
+<p>答：举个例子快递小哥在送货前，首先得把商品装车吧， 如果有西瓜、显示屏、瓜子、化妆品等形状各异，直接装的话那画面太难了！但实际中每个商品外面会包装个纸箱或者套个袋子，只需把箱子码好就可以送货了，是不是省事多了。  浏览器在布局的时候也是如此，每个元素的特性都不一样，外面套个盒子，那布局的时候就是摆盒子了，容易多了。</p>
+<p>本质：盒子模型隔绝了元素内容的多样性，提高了布局效率和开发效率。</p>
+<p>三、标准盒子和怪异盒子</p>
+<p>为什么有时候调整盒子的padding和border会导致盒子的可视区域变化呢？</p>
+<p>答：盒子模型在面积计算方面有多种模式，常见的有border-box和content-box，通过box-sizing进行指定</p>
+<p>注意：width值得是css中设置的属性width，layout-width是实际在浏览器中的看到的宽度</p>
+<p>border-box：width=border+padding+content，layout-width=width，称为怪异盒子</p>
+<p>conent-box： width=content，`layout-width=border+padding+width，称为标准盒子</p>
+<p>总结：默认的为标准盒子模型conent-box,css属性中的width和height仅指content的大小，调整padding和border`</p>
+<p>则盒子的可视区域会变化；而怪异盒子模型border-box，则width和height包括border、padding、content，调整其中任意属性，则可视区域不会变化，而content会增大或者减小。</p>
+<p>四、盒子的margin-left 、margin-right、margin-top、margin-bottom的生效策略</p>
+<p>4.1 为什么同时设置了盒子的margin-left 、margin-right，只有margin-left生效呢？</p>
+<p>答：布局的时候，浏览器是从左开始布局的，设置的间距其实是大于等于的判定。左间距为30px，右间距为50px，那么如果右边的实际空间剩余超过50px，则即可。</p>
+<p>4.2 为什么同时设置了盒子的margin-top 、margin-bottom，只有margin-top生效呢？</p>
+<p>答：布局的时候，浏览器是从上往下布局的，设置的间距其实是大于等于的判定。上间距为30px，下间距为50px，那么如果下边的实际空间剩余超过50px，则即可。</p>
+<p>综上所述：浏览器布局从左上到开始，生效的为margin-right和margin-bottom则在兄弟元素的时候会生效。</p>
+<p>五、float布局相关</p>
+<p>5.1 为什么会出现高度塌陷？</p>
+<ul>
+<li>什么是高度塌陷？<br>答：高度塌陷是指父子元素关系，父元素未指定高度，依靠内部子元素来撑起来。子元素内部设置了float的属性，会导致父元素的高度为0（也就是塌陷）。原因是float脱离了正常的文档流，子元素不能再撑起来父元素。</li>
+<li>如何解决高度塌陷或者称清除浮动？<div class="hljs code-wrapper"><pre><code>/*box为父级容器,利用overflow触发BFC*/
+.box &#123;
+  overflow: hidden;
+&#125;
+/*利用clear清除*/
+.clearfix:after&#123;
+  content: &quot;&quot;;
+  display: block;
+  visibility: hidden;  
+  clear: both;
+&#125;
+/*兼容IE6*/
+.clearfix &#123;
+  /* 触发 hasLayout */ 
+  zoom: 1; 
+&#125;
+</code></pre></div>
+</li>
+</ul>
+<p>5.2 float的元素如何上浮呢</p>
+<p>设置为float的元素会向左上或者右上进行浮动，如果遇到最近的块元素（独占一行），浮动的元素就会停止，可以把块元素想象成一堵墙即可，最外层的块元素是body。如果多个元素浮动，则按照HTML的结构顺序依次进行浮动，后浮动的挨着前浮动的（同时left或者right）</p>
+<p>5.3 浮动元素会有哪些影响呢</p>
+<ul>
+<li>高度塌陷，详见5.1</li>
+</ul>
 
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-09-07 10:38" pubdate>
-              2021-09-07
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/HTML/">HTML</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/CSS/">CSS</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2021/09/07/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">小程序学习记录</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2021/09/07/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
-          
-          
-            
-          
-          一、小程序的学习路径
-ES6语法
-HTML和CSS的学习
-微信组件和API的学习
-
-二、小程序的加载流程
-小程序的宿主是微信，打开小程序，首先会下载下程序的所有文件。小程序会读取app.json（应用配置文件）中的pages的第一个目录下的页面。
-页面渲染的时候，先读取.json的配置文件，再读取wxml和wxss文件渲染，最后读取wxjs文件加载数据
-渲染层和逻辑层是分别在不同的线程，渲染层可以
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2021-09-07 10:34" pubdate>
-              2021-09-07
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">小程序</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2019/12/03/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%B9%8B%E6%AE%87-%E8%8F%A0%E8%8F%9C%E9%AA%97%E5%B1%80/">程序员之殇--菠菜骗局</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2019/12/03/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%B9%8B%E6%AE%87-%E8%8F%A0%E8%8F%9C%E9%AA%97%E5%B1%80/">
-          
-          
-            
-          
-          　　本人今年（2019年6月底的时候）由于公司“内部优化”，幸运的中奖了，实际整个开发部都被优化了，负责的APP项目没有一点收益，这种情景相信很多程序员都经历过了。经过和公司的据理力争，我们还是成功的拿到了合理的赔偿（正常的n+1），感觉还是很欣慰的。  
-　　休息了一周，拿到赔偿的兴奋劲一过，想着自己上有老下有两小，年龄还是夕阳红的32，于是乎开始天天晚上焦虑。考虑回家创业，可除了技术，自己好像
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2019-12-03 11:00" pubdate>
-              2019-12-03
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E7%94%9F%E6%B4%BB/">生活</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E6%9D%82%E6%84%9F/">杂感</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-
-
-
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/HTML/">HTML</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/CSS/">CSS</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/09/07/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
+                        <span class="hidden-mobile">小程序学习记录</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -415,9 +426,15 @@ HTML和CSS的学习
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
 
 
 

@@ -1,0 +1,657 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/tabicon.png">
+  <link rel="icon" href="/img/tabicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  
+    <meta name="description" content="">
+  
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>小程序学习记录 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>blue-dream的小屋</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="小程序学习记录">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-09-07 10:34" pubdate>
+        2021年9月7日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.5k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      28
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">小程序学习记录</h1>
+            
+            <div class="markdown-body">
+              <h3 id="一、小程序的学习路径"><a href="#一、小程序的学习路径" class="headerlink" title="一、小程序的学习路径"></a>一、小程序的学习路径</h3><ul>
+<li>ES6语法</li>
+<li>HTML和CSS的学习</li>
+<li>微信组件和API的学习</li>
+</ul>
+<h3 id="二、小程序的加载流程"><a href="#二、小程序的加载流程" class="headerlink" title="二、小程序的加载流程"></a>二、小程序的加载流程</h3><ul>
+<li>小程序的宿主是微信，打开小程序，首先会下载下程序的所有文件。小程序会读取app.json（应用配置文件）中的pages的第一个目录下的页面。</li>
+<li>页面渲染的时候，先读取.json的配置文件，再读取wxml和wxss文件渲染，最后读取wxjs文件加载数据</li>
+<li>渲染层和逻辑层是分别在不同的线程，渲染层可以有多个通过webview进行显示；逻辑层是在单独的jscore里面进行处理，不会阻塞渲染层的显示。</li>
+</ul>
+<h3 id="三、ES6语法的学习"><a href="#三、ES6语法的学习" class="headerlink" title="三、ES6语法的学习"></a>三、ES6语法的学习</h3><ol>
+<li>作用域的概念</li>
+</ol>
+<ul>
+<li>ES6有三种作用域：全局作用域、函数作用域、快级作用域。</li>
+<li>var、let、const修饰变量的区别 <ul>
+<li>var的变量有变量提升，可以先使用后定义（解释的时候会提升）；</li>
+<li>let修饰的变量不能跨块操作；var修饰的变量不能跨函数操作；</li>
+<li>const修饰的变量必须初始化而且不能改变 </li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>原型链的理解（[[prototype]]、<code>__proto__</code>、prototype）</li>
+</ol>
+<ul>
+<li><p>原型链继承指得是<code>__proto__</code>的继承链，[[prototype]]是<code>__proto</code>的不同书写方式</p>
+</li>
+<li><p>JS中的对象实例化有new和字面量两种，每个对象的<code>__proto__</code>都指向构造函数的原型对象，构造函数的原型对象是在定义时候自动添加的，默认为{}；字面量对象的创建实质如下：</p>
+<blockquote>
+<figure class="highlight js"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">var</span> xiaowang = &#123;<br>  name: <span class="hljs-string">&quot;小王&quot;</span>,<br>  sayHello: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;hello, my name is&quot;</span> +<span class="hljs-string">&quot; &quot;</span> + <span class="hljs-built_in">this</span>.name);<br>  &#125;<br>&#125;<br><span class="hljs-comment">// 相当于如下Object为其构造函数</span><br><span class="hljs-keyword">var</span> xiaowang = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>();<br>xiaowang.name = <span class="hljs-string">&quot;小王&quot;</span>;<br>xiaowang.sayHello = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>&#123;<br>    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;hello, my name is&quot;</span> +<span class="hljs-string">&quot; &quot;</span> + <span class="hljs-built_in">this</span>.name);<br>&#125;;<br></code></pre></div></td></tr></table></figure></blockquote>
+</li>
+<li><p>任何函数有且只有函数都有一个prototype，在其定义（具体时机尚不清除）的时候产生，默认为{}，函数也是对象，它的<code>__proto__</code>均为Function.prototype， 因为任何函数本质都是由Function实例化的。特殊性Function[函数是自身构造的，构成了闭环；</p>
+</li>
+<li><p>Object.protype对象的<code>__proto__</code>比较特殊指向了null，表明原型继承链的顶点</p>
+</li>
+</ul>
+<ol start="3">
+<li>js中new对象的过程（待补充）</li>
+<li>js中继承的过程（待补充）</li>
+<li>Object的常用属性和方法（待补充）</li>
+</ol>
+<h3 id="四、CSS布局的学习（定位-选择器-样式）"><a href="#四、CSS布局的学习（定位-选择器-样式）" class="headerlink" title="四、CSS布局的学习（定位+ 选择器 + 样式）"></a>四、CSS布局的学习（定位+ 选择器 + 样式）</h3><h4 id="4-1-相关的知识点"><a href="#4-1-相关的知识点" class="headerlink" title="4.1 相关的知识点"></a>4.1 相关的知识点</h4><ul>
+<li><p>块级和行级元素</p>
+<ul>
+<li>块级元素的特定：独占一行，宽默认是父容器的宽度，宽和高可以设置，内容高度可以通过子视图撑起来</li>
+<li>行级元素：从左到有排列，宽度和高度设置无效，padding和marging的水平方向有效</li>
+</ul>
+</li>
+<li><p><code>static</code>、<code>relative</code>、<code>fixed</code>、<code>absolute</code>、<code>float</code>的深度使用</p>
+<blockquote>
+<ol>
+<li><code>staic</code>是浏览器默认的布局行为，行内元素从左到右排列，块内元素从上到下独占一行排列。<code>staic</code>中设置<code>top</code>、<code>right</code>、<code>bottom</code>、<code>left</code>均无效</li>
+<li><code>relatvie</code>是相对布局，元素不脱离文档流（元素实际占的位置还是原先的位置，典型的占着茅坑那不拉啥）。<code>top</code>、<code>right</code>、<code>bottom</code>、<code>left</code>是相对于自身原有的布局</li>
+<li><code>absolute</code>绝对布局参考位置：最近的非static的元素，进行布局，脱离了文档流（文档流中的其它元素正常布局的时候，这个元素相当于不存在）</li>
+<li><code>fixed</code>是固定布局，参考位置：浏览器窗口，进行布局，脱离了文档流文档流中的其它元素正常布局的时候，这个元素相当于不存在）</li>
+<li>float主要是为了解决图文混排，影响（坑）比较多，单独拎出来说</li>
+</ol>
+</blockquote>
+</li>
+<li><p>flex布局的使用</p>
+</li>
+<li><p>rpx、px、rem的屏幕适配</p>
+<ul>
+<li>小程序中认为所有屏幕的宽度均为750rpx，在iphone6中1rpx=1物理像素=0.5px，不同屏幕下rpx会自动适配（等比放大和缩小）。本质是1rpx在不同分辨率的屏幕下，对应的rpx=屏幕的物理像素/750，和rem利用root的font异曲同工。</li>
+</ul>
+</li>
+<li><p>常见选择器的使用</p>
+</li>
+</ul>
+<h4 id="4-2-布局的原理"><a href="#4-2-布局的原理" class="headerlink" title="4.2 布局的原理"></a>4.2 布局的原理</h4><ul>
+<li><p>css盒子模型和<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000009139500">布局原理的链接</a> </p>
+</li>
+<li><p>布局的本质是探究盒子在父容器（上一级盒子）里的放置位置：document-&gt;html-&gt;(head、body)</p>
+</li>
+<li><p>BFC的产生和作用</p>
+<ul>
+<li><p>BFC的产生</p>
+<ol>
+<li><code>overflow</code> 的值不为 <code>visible</code></li>
+<li><code>float</code>不为<code>none</code></li>
+<li><code>position</code> 的值不为 <code>static</code> 或者 <code>relative</code></li>
+<li><code>display</code> 的值为 <code>table-cell</code> , <code>table-caption</code> , <code>inline-block</code> , <code>flex</code> , 或者 <code>inline-flex</code> 中的其中一个</li>
+</ol>
+</li>
+<li><p>BFC的作用</p>
+<ol>
+<li><p>消除块级元素上下间距的合并</p>
+</li>
+<li><p>清除浮动导致塌陷高度</p>
+</li>
+<li><p>清除浮动元素和盒子边距的重合</p>
+</li>
+<li><p>边距侧漏的影响（父子div，子的第一个div设置margin-top会穿透子的div，变成父级的margin-top</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-3-css为什么需要加一些私有前缀"><a href="#4-3-css为什么需要加一些私有前缀" class="headerlink" title="4.3 css为什么需要加一些私有前缀"></a>4.3 css为什么需要加一些私有前缀</h4><blockquote>
+<p>某个属性的增加，从提出到成为w3c的标准，要经过很长的时间。浏览器厂商觉得属性成熟的时候，可能就会提前使用，但是为了防止以后成为标准时候属性的变更，就会加一些前缀来兼容，以下是一些浏览器的一些前缀</p>
+</blockquote>
+<ul>
+<li>-webkit- 谷歌浏览器</li>
+<li>-ms- ie浏览器</li>
+<li>-moz- 火狐浏览器</li>
+<li>-o- opera浏览器<h4 id="4-4-css中的选择器"><a href="#4-4-css中的选择器" class="headerlink" title="4.4 css中的选择器"></a>4.4 css中的选择器</h4></li>
+</ul>
+<h5 id="4-4-1-选择器的分类"><a href="#4-4-1-选择器的分类" class="headerlink" title="4.4.1 选择器的分类"></a>4.4.1 选择器的分类</h5><p>​    选择器的作用是用于获取元素，在移动端开发中元素的获取比较简单变量和tag，在html中的元素是怎么获取呢？通过选择器。选择器的种类按照名称分为</p>
+<ul>
+<li><p>类选择器：<code>.class</code>，用于标识多个元素</p>
+<ul>
+<li><code>.class1.class2....n</code>, 交集关系，一个元素同时有class1到classn的时候，会被选中。<code>.class</code>属于多个类选择器中的n=1的情况</li>
+</ul>
+</li>
+<li><p>id选择器: <code>#id</code>,用于标识唯一的元素，整个html文档里面不能重复</p>
+</li>
+<li><p>元素选择器：element，选中所有的元素（采用问答形式感觉更容易理解，内：父子孙关系，后：兄弟关系）</p>
+<blockquote>
+<p>1.如何选中所有的p元素</p>
+<p>答：<code>p&#123;&#125;</code>。选中所有的某类元素<code>element &#123;&#125;</code></p>
+<p>2.如何选则所有p元素和div元素</p>
+<p>答：<code>p,div&#123;&#125;</code>。选中所有的element1和element2<code>element1,element2&#123;&#125;</code></p>
+<p>2.如何选中div里面的所有p元素</p>
+<p>答: <code>div p&#123;&#125;</code>。选中element1内的所有element2元素 <code>element1 element2&#123;&#125;</code></p>
+<p>3.如何选中div里面的所有子的p元素，非孙元素</p>
+<p>答: <code>div&gt;p&#123;&#125;</code>。选中element1内的所有子的element2元素 <code>element1&gt;element2&#123;&#125;</code></p>
+<p>4.如何选中div后面的第一个p元素</p>
+<p>答：<code>div+p&#123;&#125;</code>。选中element1后面的第一个element2元素 <code>element1+element2&#123;&#125;</code></p>
+<p>5.如何选中div后面的所有p元素</p>
+<p>答：<code>div~p&#123;&#125;</code>。选中element1后面的所有element2元素 <code>element1~element2&#123;&#125;</code></p>
+</blockquote>
+</li>
+<li><p>属性选择器：<code>[attribute=value]</code>,利用元素的属性和值</p>
+</li>
+<li><p>伪类选择器: <code>:value</code>,一般是stated一般是某些状态类似<code>active</code></p>
+<ul>
+<li><p>兄弟关系中的选择器（兄弟关系可以类比为父元素下的数组，数组内部的索引就是添加元素的顺序）</p>
+<ol>
+<li>数量顺序上的维度：<code>:first-child</code>、<code>last-child</code>、<code>nth-child(n)</code>、<code>nth-last-child(n)</code>、<code>onlf-child</code></li>
+</ol>
+<blockquote>
+<ol>
+<li><code>p:first-child</code>，兄弟关系中的第一个p元素</li>
+<li><code>p:last-child</code>，兄弟关系中的最后一个p元素</li>
+<li><code>p:nth-child(n)</code>，兄弟关系中的第n个元素，顺序从前往后</li>
+<li><code>p:nth-last-child(n)</code>，兄弟关系中元素中的的第n个元素，顺序从后往前</li>
+<li><code>p:only-child</code>，父元素只有唯一的子元素，同时该元素为p类型</li>
+</ol>
+</blockquote>
+<ol start="2">
+<li><p>类型顺序上的维度：<code>:first-of-type</code>、<code>:last-of-type</code>、<code>:nth-of-type(n)</code>、<code>:nth-last-of-type(n)</code>、<code>:only-of-type</code></p>
+<blockquote>
+<ol>
+<li><code>p:first-of-type</code> ，兄弟关系中类型为p的第一个</li>
+<li><code>p:last-of-type</code>，兄弟关系中类型为p的最后一个</li>
+<li><code>p:nth-of-type(n)</code>，兄弟关系中类型为p的子元素中的第n个，顺序从前往后</li>
+<li><code>p:nth-last-of-type(n)</code>，兄弟关系中类型为p的子元素数组中的的第n个，顺序从后往前</li>
+<li><code>p:only-of-type</code>，任何父元素下的类型为p的子元素数组中的唯一一个</li>
+</ol>
+</blockquote>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<p>​    选择器中的通用规则空格一般代表是父子关系，可以理解为某个盒子内的….。逗号在class中为同时的关系，在element中的时候为或者的关系，一般都是在内寻找具有某种属性的第几个的元素。</p>
+<h5 id="4-4-2-选择器的权重"><a href="#4-4-2-选择器的权重" class="headerlink" title="4.4.2 选择器的权重"></a>4.4.2 选择器的权重</h5><p>  选择器的权重是分为4个等级，先祭出一张图片如下</p>
+<div style="align: center">
+  <img src="https://images2018.cnblogs.com/blog/734402/201803/734402-20180315180252953-849133314.png" srcset="/img/loading.gif"/>
+</div>
+
+<ul>
+<li><p>权重的分类标准</p>
+<blockquote>
+<ol>
+<li><p>style=内联的权重最高为 1000</p>
+</li>
+<li><p>id类型的选择器权重为 0100</p>
+</li>
+<li><p><code>class</code>、伪类、属性选择器的权重为 0010</p>
+</li>
+<li><p>元素、伪元素选择器的权重为 0001</p>
+</li>
+<li><p>*，&gt;（父子选择），+（同胞选择）权重为0</p>
+</li>
+</ol>
+</blockquote>
+</li>
+<li><p>权重的计算公式<br>  权重 = 第1级选择器个数 * 1000， 第2级选择器个数 * 100 ， 第3级选择器个数 * 10 ，第4级选择器个数 * 1</p>
+</li>
+<li><p>权重的比对原则</p>
+<ul>
+<li>从高位到低位依次比对</li>
+<li>条件相同的，后面的样式会覆盖前面的</li>
+<li>css属性后面加!important的时候，优先级最高（比内联样式都高）</li>
+</ul>
+<p><img src="images/css-weight-result.png" srcset="/img/loading.gif" alt="权重对比结果"></p>
+</li>
+</ul>
+<h3 id="五、JS的事件"><a href="#五、JS的事件" class="headerlink" title="五、JS的事件"></a>五、JS的事件</h3><h4 id="5-1-事件传递机制"><a href="#5-1-事件传递机制" class="headerlink" title="5.1 事件传递机制"></a>5.1 事件传递机制</h4><ul>
+<li>两个阶段：捕获阶段：父组件传递到子组件；冒泡阶段：子组件传递到父组件。事件传递顺序：从捕获-&gt;目标阶段-&gt;冒泡阶段</li>
+<li><code>target</code>、<code>currentTarget</code>、<code>this</code><ul>
+<li><code>target</code>：触发事件的对象</li>
+<li><code>currentTarget</code>：绑定事件的对象</li>
+<li><code>this</code>：</li>
+<li>当处于目标阶段的时候，<code>target</code>和<code>currentTarget</code>是相等的。在捕获和冒泡阶段，<code>target</code>是触发事件的控件为子控件；<code>currentTarget</code>一般是父组件。</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">小程序</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/09/07/HTML%E7%9A%84%E5%B8%83%E5%B1%80%E7%9A%84%E5%AD%A6%E4%B9%A0/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">HTML的布局学习记录</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2019/12/03/%E7%A8%8B%E5%BA%8F%E5%91%98%E4%B9%8B%E6%AE%87-%E8%8F%A0%E8%8F%9C%E9%AA%97%E5%B1%80/">
+                        <span class="hidden-mobile">程序员之殇--菠菜骗局</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
