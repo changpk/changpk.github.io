@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      943 字
+      1.5k 字
     </span>
   
 
@@ -197,7 +197,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      10
+      16
        分钟
     </span>
   
@@ -230,54 +230,98 @@
             <h1 style="display: none">HTML的布局学习记录</h1>
             
             <div class="markdown-body">
-              <p>一、盒子模型</p>
-<p>  HTML中的每个元素都是盒子，每个盒子都有margin，border，padding，content构成。</p>
-<p>二、为什么要有盒子模型呢？</p>
-<p>答：举个例子快递小哥在送货前，首先得把商品装车吧， 如果有西瓜、显示屏、瓜子、化妆品等形状各异，直接装的话那画面太难了！但实际中每个商品外面会包装个纸箱或者套个袋子，只需把箱子码好就可以送货了，是不是省事多了。  浏览器在布局的时候也是如此，每个元素的特性都不一样，外面套个盒子，那布局的时候就是摆盒子了，容易多了。</p>
-<p>本质：盒子模型隔绝了元素内容的多样性，提高了布局效率和开发效率。</p>
-<p>三、标准盒子和怪异盒子</p>
-<p>为什么有时候调整盒子的padding和border会导致盒子的可视区域变化呢？</p>
-<p>答：盒子模型在面积计算方面有多种模式，常见的有border-box和content-box，通过box-sizing进行指定</p>
+              <h3 id="HTML布局的学习记录"><a href="#HTML布局的学习记录" class="headerlink" title="HTML布局的学习记录"></a>HTML布局的学习记录</h3><h4 id="一、盒子模型"><a href="#一、盒子模型" class="headerlink" title="一、盒子模型"></a>一、盒子模型</h4><p>  HTML中的每个元素都是盒子，每个盒子都有<code>margin</code>，<code>border</code>，<code>padding</code>，<code>content</code>构成。</p>
+<h4 id="二、为什么要有盒子模型呢？"><a href="#二、为什么要有盒子模型呢？" class="headerlink" title="二、为什么要有盒子模型呢？"></a>二、为什么要有盒子模型呢？</h4><p>答：举个例子快递小哥在送货前，首先得把商品装车吧， 如果有西瓜、显示屏、瓜子、化妆品等形状各异，直接装的话那画面太难了！但实际中每个商品外面会包装个纸箱或者套个袋子，只需把箱子码好就可以送货了，是不是省事多了。  浏览器在布局的时候也是如此，每个元素的特性都不一样，外面套个盒子，那布局的时候就是摆盒子了，容易多了。</p>
+<p><strong>本质：盒子模型隔绝了元素内容的多样性，提高了布局效率和开发效率。</strong></p>
+<h4 id="三、标准盒子和怪异盒子"><a href="#三、标准盒子和怪异盒子" class="headerlink" title="三、标准盒子和怪异盒子"></a>三、标准盒子和怪异盒子</h4><h5 id="为什么有时候调整盒子的padding和border会导致盒子的可视区域变化呢？"><a href="#为什么有时候调整盒子的padding和border会导致盒子的可视区域变化呢？" class="headerlink" title="为什么有时候调整盒子的padding和border会导致盒子的可视区域变化呢？"></a>为什么有时候调整盒子的<code>padding</code>和<code>border</code>会导致盒子的可视区域变化呢？</h5><p>答：盒子模型在面积计算方面有多种模式，常见的有<code>border-box</code>和<code>content-box</code>，通过<code>box-sizing</code>进行指定</p>
+<blockquote>
 <p>注意：width值得是css中设置的属性width，layout-width是实际在浏览器中的看到的宽度</p>
-<p>border-box：width=border+padding+content，layout-width=width，称为怪异盒子</p>
-<p>conent-box： width=content，`layout-width=border+padding+width，称为标准盒子</p>
-<p>总结：默认的为标准盒子模型conent-box,css属性中的width和height仅指content的大小，调整padding和border`</p>
-<p>则盒子的可视区域会变化；而怪异盒子模型border-box，则width和height包括border、padding、content，调整其中任意属性，则可视区域不会变化，而content会增大或者减小。</p>
-<p>四、盒子的margin-left 、margin-right、margin-top、margin-bottom的生效策略</p>
-<p>4.1 为什么同时设置了盒子的margin-left 、margin-right，只有margin-left生效呢？</p>
-<p>答：布局的时候，浏览器是从左开始布局的，设置的间距其实是大于等于的判定。左间距为30px，右间距为50px，那么如果右边的实际空间剩余超过50px，则即可。</p>
-<p>4.2 为什么同时设置了盒子的margin-top 、margin-bottom，只有margin-top生效呢？</p>
-<p>答：布局的时候，浏览器是从上往下布局的，设置的间距其实是大于等于的判定。上间距为30px，下间距为50px，那么如果下边的实际空间剩余超过50px，则即可。</p>
-<p>综上所述：浏览器布局从左上到开始，生效的为margin-right和margin-bottom则在兄弟元素的时候会生效。</p>
-<p>五、float布局相关</p>
-<p>5.1 为什么会出现高度塌陷？</p>
-<ul>
-<li>什么是高度塌陷？<br>答：高度塌陷是指父子元素关系，父元素未指定高度，依靠内部子元素来撑起来。子元素内部设置了float的属性，会导致父元素的高度为0（也就是塌陷）。原因是float脱离了正常的文档流，子元素不能再撑起来父元素。</li>
-<li>如何解决高度塌陷或者称清除浮动？<div class="hljs code-wrapper"><pre><code>/*box为父级容器,利用overflow触发BFC*/
-.box &#123;
-  overflow: hidden;
-&#125;
-/*利用clear清除*/
-.clearfix:after&#123;
-  content: &quot;&quot;;
-  display: block;
-  visibility: hidden;  
-  clear: both;
-&#125;
-/*兼容IE6*/
-.clearfix &#123;
-  /* 触发 hasLayout */ 
-  zoom: 1; 
-&#125;
-</code></pre></div>
+<p><code>border-box</code>：<code>width=border+padding+content</code>，<code>layout-width=width</code>，称为怪异盒子</p>
+<p><code>conent-box</code>： <code>width=content</code>，`layout-width=border+padding+width，称为标准盒子</p>
+</blockquote>
+<p>总结：默认的为标准盒子模型<code>conent-box</code>,css属性中的<code>width和</code>height<code>仅指content的大小，调整</code>padding<code>和</code>border`</p>
+<p>则盒子的可视区域会变化；而怪异盒子模型<code>border-box</code>，则<code>width</code>和<code>height</code>包括<code>border</code>、<code>padding</code>、<code>content</code>，调整其中任意属性，则可视区域不会变化，而<code>content</code>会增大或者减小。</p>
+<h4 id="四、盒子的margin-left-、margin-right、margin-top、margin-bottom的生效策略"><a href="#四、盒子的margin-left-、margin-right、margin-top、margin-bottom的生效策略" class="headerlink" title="四、盒子的margin-left 、margin-right、margin-top、margin-bottom的生效策略"></a>四、盒子的<code>margin-left</code> 、<code>margin-right</code>、<code>margin-top</code>、<code>margin-bottom</code>的生效策略</h4><h5 id="4-1-为什么同时设置了盒子的margin-left-、margin-right，只有margin-left生效呢？"><a href="#4-1-为什么同时设置了盒子的margin-left-、margin-right，只有margin-left生效呢？" class="headerlink" title="4.1 为什么同时设置了盒子的margin-left 、margin-right，只有margin-left生效呢？"></a>4.1 为什么同时设置了盒子的<code>margin-left</code> 、<code>margin-right</code>，只有<code>margin-left</code>生效呢？</h5><p>答：布局的时候，浏览器是从左开始布局的，设置的间距其实是大于等于的判定。左间距为30px，右间距为50px，那么如果右边的实际空间剩余超过50px，则即可。</p>
+<h5 id="4-2-为什么同时设置了盒子的margin-top-、margin-bottom，只有margin-top生效呢？"><a href="#4-2-为什么同时设置了盒子的margin-top-、margin-bottom，只有margin-top生效呢？" class="headerlink" title="4.2 为什么同时设置了盒子的margin-top 、margin-bottom，只有margin-top生效呢？"></a>4.2 为什么同时设置了盒子的<code>margin-top</code> 、<code>margin-bottom</code>，只有<code>margin-top</code>生效呢？</h5><p>答：布局的时候，浏览器是从上往下布局的，设置的间距其实是大于等于的判定。上间距为30px，下间距为50px，那么如果下边的实际空间剩余超过50px，则即可。</p>
+<p><strong>综上所述：浏览器布局从左上到开始，生效的为<code>margin-right</code>和<code>margin-bottom</code>则在兄弟元素的时候会生效。</strong></p>
+<h4 id="五、float布局相关"><a href="#五、float布局相关" class="headerlink" title="五、float布局相关"></a>五、float布局相关</h4><h5 id="5-1-为什么会出现高度塌陷？"><a href="#5-1-为什么会出现高度塌陷？" class="headerlink" title="5.1 为什么会出现高度塌陷？"></a>5.1 <span id="5.1-float">为什么会出现高度塌陷？</span></h5><ul>
+<li><p>什么是高度塌陷？</p>
+<p>答：高度塌陷是指父子元素关系，父元素未指定高度，依靠内部子元素来撑起来。子元素内部设置了float的属性，会导致父元素的高度为0（也就是塌陷）。原因是float脱离了正常的文档流，子元素不能再撑起来父元素。</p>
+</li>
+<li><p>如何解决高度塌陷或者称清除浮动？</p>
+<figure class="highlight css"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs css"><span class="hljs-comment">/*box为父级容器,利用overflow触发BFC*/</span><br><span class="hljs-selector-class">.box</span> &#123;<br>  <span class="hljs-attribute">overflow</span>: hidden;<br>&#125;<br><span class="hljs-comment">/*利用clear清除*/</span><br><span class="hljs-selector-class">.clearfix</span>:after&#123;<br>  content: <span class="hljs-string">&quot;&quot;</span>;<br>  <span class="hljs-attribute">display</span>: block;<br>  <span class="hljs-attribute">visibility</span>: hidden;  <br>  <span class="hljs-attribute">clear</span>: both;<br>&#125;<br><span class="hljs-comment">/*兼容IE6*/</span><br><span class="hljs-selector-class">.clearfix</span> &#123;<br>  <span class="hljs-comment">/* 触发 hasLayout */</span> <br>  zoom: <span class="hljs-number">1</span>; <br>&#125;<br></code></pre></div></td></tr></table></figure></li>
+</ul>
+<h5 id="5-2-float的元素如何上浮呢"><a href="#5-2-float的元素如何上浮呢" class="headerlink" title="5.2 float的元素如何上浮呢"></a>5.2 float的元素如何上浮呢</h5><p>设置为float的元素会向左上或者右上进行浮动，如果遇到最近的块元素（独占一行），浮动的元素就会停止，可以把块元素想象成一堵墙即可，最外层的块元素是<code>body</code>。如果多个元素浮动，则按照<code>HTML</code>的结构顺序依次进行浮动，后浮动的挨着前浮动的（同时<code>left</code>或者<code>right</code>）</p>
+<h5 id="5-3-浮动元素会有哪些影响呢"><a href="#5-3-浮动元素会有哪些影响呢" class="headerlink" title="5.3 浮动元素会有哪些影响呢"></a>5.3 浮动元素会有哪些影响呢</h5><ul>
+<li><p>高度塌陷，详见<a href="#5.1-float">5.1</a></p>
+</li>
+<li><p>浮动元素会脱离文档流：不在正常的文档流中，其它在正常文档流中的元素会认为它不存在。</p>
+</li>
+<li><p>提升视图层次，浮动的元素的<code>z-index</code>会自己提升</p>
+</li>
+<li><p>浮动元素会改变部分元素的特性：内联元素浮动后，<code>width</code>和<code>height</code>可以进行指定</p>
 </li>
 </ul>
-<p>5.2 float的元素如何上浮呢</p>
-<p>设置为float的元素会向左上或者右上进行浮动，如果遇到最近的块元素（独占一行），浮动的元素就会停止，可以把块元素想象成一堵墙即可，最外层的块元素是body。如果多个元素浮动，则按照HTML的结构顺序依次进行浮动，后浮动的挨着前浮动的（同时left或者right）</p>
-<p>5.3 浮动元素会有哪些影响呢</p>
-<ul>
-<li>高度塌陷，详见5.1</li>
+<h4 id="六、BFC是什么，有什么用途"><a href="#六、BFC是什么，有什么用途" class="headerlink" title="六、BFC是什么，有什么用途"></a>六、BFC是什么，有什么用途</h4><h5 id="BFC是什么"><a href="#BFC是什么" class="headerlink" title="BFC是什么"></a>BFC是什么</h5><p>BFC是一个独立的布局环境，BFC内部的元素布局与外部互不影响</p>
+<h6 id="BFC的用途（常用的）"><a href="#BFC的用途（常用的）" class="headerlink" title="BFC的用途（常用的）"></a>BFC的用途（常用的）</h6><ul>
+<li><p>父子层级可以解决：外边距塌陷、高度塌陷</p>
+</li>
+<li><p>BFC和其它元素可以解决的问题：<code>float</code>的元素不会发生重叠，边距合并（套用一个<code>div</code>触发BFC，不推荐会改变HTML的结构）</p>
+<h5 id="触发BFC的条件"><a href="#触发BFC的条件" class="headerlink" title="触发BFC的条件"></a>触发BFC的条件</h5></li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>元素或属性</th>
+<th>属性值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>float</code></td>
+<td><code>left</code>、<code>right</code></td>
+</tr>
+<tr>
+<td><code>position</code></td>
+<td><code>absolute</code>、<code>fixed</code></td>
+</tr>
+<tr>
+<td><code>overflow</code></td>
+<td><code>hidden</code>、<code>auto</code>、<code>scroll</code></td>
+</tr>
+<tr>
+<td><code>display</code></td>
+<td><code>inline-block</code>、<code>table-cell</code></td>
+</tr>
+</tbody></table>
+<p>上述来源于<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/127187654">参考链接</a>的汇总，感谢作者的分享</p>
+<h4 id="六、定位相关"><a href="#六、定位相关" class="headerlink" title="六、定位相关"></a>六、定位相关</h4><p>CSS中的布局方式有<code>static</code>、<code>relative</code>、<code>absolute</code>、<code>fixed</code>，四种。默认的为<code>static</code>布局按照块级元素和内联元素的特性，正常布局，也就是说的文档流。</p>
+<p><strong>个人当时理解不到的地方：块级元素独占一行，有时候看到的<code>div</code>可能宽度不到一屏，但实际在文档流中的影响的区域是一行的，布局的时候可以自己脑补满屏。</strong></p>
+<p>因为正常的文档流方式，满足不了实际中的一些布局效果。例如多个块元素能在一行排列么？理解定位的关键是参考系的确定</p>
+<table>
+<thead>
+<tr>
+<th>布局方式</th>
+<th>参考元素</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>static</code></td>
+<td>正常文档流方式</td>
+</tr>
+<tr>
+<td><code>relative</code></td>
+<td>相对于正常文档流方式中的位置，不脱离文档流</td>
+</tr>
+<tr>
+<td><code>absolute</code></td>
+<td>最近的非<code>static</code>的祖先元素，脱离文档流，<code>z-index</code>提升</td>
+</tr>
+<tr>
+<td><code>fixed</code></td>
+<td><code>absolute</code>的特殊情况，参靠的是浏览器窗口也就是body，脱离文档流，<code>z-index</code>提升</td>
+</tr>
+</tbody></table>
+<p><strong>CSS要想熟练掌握，理论是基础，关键还是写页面，写页面！</strong></p>
 
             </div>
             <hr>
