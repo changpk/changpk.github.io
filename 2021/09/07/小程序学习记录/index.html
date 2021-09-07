@@ -187,7 +187,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.5k 字
+      590 字
     </span>
   
 
@@ -197,7 +197,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      28
+      6
        分钟
     </span>
   
@@ -272,176 +272,6 @@
 <li>js中继承的过程（待补充）</li>
 <li>Object的常用属性和方法（待补充）</li>
 </ol>
-<h3 id="四、CSS布局的学习（定位-选择器-样式）"><a href="#四、CSS布局的学习（定位-选择器-样式）" class="headerlink" title="四、CSS布局的学习（定位+ 选择器 + 样式）"></a>四、CSS布局的学习（定位+ 选择器 + 样式）</h3><h4 id="4-1-相关的知识点"><a href="#4-1-相关的知识点" class="headerlink" title="4.1 相关的知识点"></a>4.1 相关的知识点</h4><ul>
-<li><p>块级和行级元素</p>
-<ul>
-<li>块级元素的特定：独占一行，宽默认是父容器的宽度，宽和高可以设置，内容高度可以通过子视图撑起来</li>
-<li>行级元素：从左到有排列，宽度和高度设置无效，padding和marging的水平方向有效</li>
-</ul>
-</li>
-<li><p><code>static</code>、<code>relative</code>、<code>fixed</code>、<code>absolute</code>、<code>float</code>的深度使用</p>
-<blockquote>
-<ol>
-<li><code>staic</code>是浏览器默认的布局行为，行内元素从左到右排列，块内元素从上到下独占一行排列。<code>staic</code>中设置<code>top</code>、<code>right</code>、<code>bottom</code>、<code>left</code>均无效</li>
-<li><code>relatvie</code>是相对布局，元素不脱离文档流（元素实际占的位置还是原先的位置，典型的占着茅坑那不拉啥）。<code>top</code>、<code>right</code>、<code>bottom</code>、<code>left</code>是相对于自身原有的布局</li>
-<li><code>absolute</code>绝对布局参考位置：最近的非static的元素，进行布局，脱离了文档流（文档流中的其它元素正常布局的时候，这个元素相当于不存在）</li>
-<li><code>fixed</code>是固定布局，参考位置：浏览器窗口，进行布局，脱离了文档流文档流中的其它元素正常布局的时候，这个元素相当于不存在）</li>
-<li>float主要是为了解决图文混排，影响（坑）比较多，单独拎出来说</li>
-</ol>
-</blockquote>
-</li>
-<li><p>flex布局的使用</p>
-</li>
-<li><p>rpx、px、rem的屏幕适配</p>
-<ul>
-<li>小程序中认为所有屏幕的宽度均为750rpx，在iphone6中1rpx=1物理像素=0.5px，不同屏幕下rpx会自动适配（等比放大和缩小）。本质是1rpx在不同分辨率的屏幕下，对应的rpx=屏幕的物理像素/750，和rem利用root的font异曲同工。</li>
-</ul>
-</li>
-<li><p>常见选择器的使用</p>
-</li>
-</ul>
-<h4 id="4-2-布局的原理"><a href="#4-2-布局的原理" class="headerlink" title="4.2 布局的原理"></a>4.2 布局的原理</h4><ul>
-<li><p>css盒子模型和<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000009139500">布局原理的链接</a> </p>
-</li>
-<li><p>布局的本质是探究盒子在父容器（上一级盒子）里的放置位置：document-&gt;html-&gt;(head、body)</p>
-</li>
-<li><p>BFC的产生和作用</p>
-<ul>
-<li><p>BFC的产生</p>
-<ol>
-<li><code>overflow</code> 的值不为 <code>visible</code></li>
-<li><code>float</code>不为<code>none</code></li>
-<li><code>position</code> 的值不为 <code>static</code> 或者 <code>relative</code></li>
-<li><code>display</code> 的值为 <code>table-cell</code> , <code>table-caption</code> , <code>inline-block</code> , <code>flex</code> , 或者 <code>inline-flex</code> 中的其中一个</li>
-</ol>
-</li>
-<li><p>BFC的作用</p>
-<ol>
-<li><p>消除块级元素上下间距的合并</p>
-</li>
-<li><p>清除浮动导致塌陷高度</p>
-</li>
-<li><p>清除浮动元素和盒子边距的重合</p>
-</li>
-<li><p>边距侧漏的影响（父子div，子的第一个div设置margin-top会穿透子的div，变成父级的margin-top</p>
-</li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="4-3-css为什么需要加一些私有前缀"><a href="#4-3-css为什么需要加一些私有前缀" class="headerlink" title="4.3 css为什么需要加一些私有前缀"></a>4.3 css为什么需要加一些私有前缀</h4><blockquote>
-<p>某个属性的增加，从提出到成为w3c的标准，要经过很长的时间。浏览器厂商觉得属性成熟的时候，可能就会提前使用，但是为了防止以后成为标准时候属性的变更，就会加一些前缀来兼容，以下是一些浏览器的一些前缀</p>
-</blockquote>
-<ul>
-<li>-webkit- 谷歌浏览器</li>
-<li>-ms- ie浏览器</li>
-<li>-moz- 火狐浏览器</li>
-<li>-o- opera浏览器<h4 id="4-4-css中的选择器"><a href="#4-4-css中的选择器" class="headerlink" title="4.4 css中的选择器"></a>4.4 css中的选择器</h4></li>
-</ul>
-<h5 id="4-4-1-选择器的分类"><a href="#4-4-1-选择器的分类" class="headerlink" title="4.4.1 选择器的分类"></a>4.4.1 选择器的分类</h5><p>​    选择器的作用是用于获取元素，在移动端开发中元素的获取比较简单变量和tag，在html中的元素是怎么获取呢？通过选择器。选择器的种类按照名称分为</p>
-<ul>
-<li><p>类选择器：<code>.class</code>，用于标识多个元素</p>
-<ul>
-<li><code>.class1.class2....n</code>, 交集关系，一个元素同时有class1到classn的时候，会被选中。<code>.class</code>属于多个类选择器中的n=1的情况</li>
-</ul>
-</li>
-<li><p>id选择器: <code>#id</code>,用于标识唯一的元素，整个html文档里面不能重复</p>
-</li>
-<li><p>元素选择器：element，选中所有的元素（采用问答形式感觉更容易理解，内：父子孙关系，后：兄弟关系）</p>
-<blockquote>
-<p>1.如何选中所有的p元素</p>
-<p>答：<code>p&#123;&#125;</code>。选中所有的某类元素<code>element &#123;&#125;</code></p>
-<p>2.如何选则所有p元素和div元素</p>
-<p>答：<code>p,div&#123;&#125;</code>。选中所有的element1和element2<code>element1,element2&#123;&#125;</code></p>
-<p>2.如何选中div里面的所有p元素</p>
-<p>答: <code>div p&#123;&#125;</code>。选中element1内的所有element2元素 <code>element1 element2&#123;&#125;</code></p>
-<p>3.如何选中div里面的所有子的p元素，非孙元素</p>
-<p>答: <code>div&gt;p&#123;&#125;</code>。选中element1内的所有子的element2元素 <code>element1&gt;element2&#123;&#125;</code></p>
-<p>4.如何选中div后面的第一个p元素</p>
-<p>答：<code>div+p&#123;&#125;</code>。选中element1后面的第一个element2元素 <code>element1+element2&#123;&#125;</code></p>
-<p>5.如何选中div后面的所有p元素</p>
-<p>答：<code>div~p&#123;&#125;</code>。选中element1后面的所有element2元素 <code>element1~element2&#123;&#125;</code></p>
-</blockquote>
-</li>
-<li><p>属性选择器：<code>[attribute=value]</code>,利用元素的属性和值</p>
-</li>
-<li><p>伪类选择器: <code>:value</code>,一般是stated一般是某些状态类似<code>active</code></p>
-<ul>
-<li><p>兄弟关系中的选择器（兄弟关系可以类比为父元素下的数组，数组内部的索引就是添加元素的顺序）</p>
-<ol>
-<li>数量顺序上的维度：<code>:first-child</code>、<code>last-child</code>、<code>nth-child(n)</code>、<code>nth-last-child(n)</code>、<code>onlf-child</code></li>
-</ol>
-<blockquote>
-<ol>
-<li><code>p:first-child</code>，兄弟关系中的第一个p元素</li>
-<li><code>p:last-child</code>，兄弟关系中的最后一个p元素</li>
-<li><code>p:nth-child(n)</code>，兄弟关系中的第n个元素，顺序从前往后</li>
-<li><code>p:nth-last-child(n)</code>，兄弟关系中元素中的的第n个元素，顺序从后往前</li>
-<li><code>p:only-child</code>，父元素只有唯一的子元素，同时该元素为p类型</li>
-</ol>
-</blockquote>
-<ol start="2">
-<li><p>类型顺序上的维度：<code>:first-of-type</code>、<code>:last-of-type</code>、<code>:nth-of-type(n)</code>、<code>:nth-last-of-type(n)</code>、<code>:only-of-type</code></p>
-<blockquote>
-<ol>
-<li><code>p:first-of-type</code> ，兄弟关系中类型为p的第一个</li>
-<li><code>p:last-of-type</code>，兄弟关系中类型为p的最后一个</li>
-<li><code>p:nth-of-type(n)</code>，兄弟关系中类型为p的子元素中的第n个，顺序从前往后</li>
-<li><code>p:nth-last-of-type(n)</code>，兄弟关系中类型为p的子元素数组中的的第n个，顺序从后往前</li>
-<li><code>p:only-of-type</code>，任何父元素下的类型为p的子元素数组中的唯一一个</li>
-</ol>
-</blockquote>
-</li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
-<p>​    选择器中的通用规则空格一般代表是父子关系，可以理解为某个盒子内的….。逗号在class中为同时的关系，在element中的时候为或者的关系，一般都是在内寻找具有某种属性的第几个的元素。</p>
-<h5 id="4-4-2-选择器的权重"><a href="#4-4-2-选择器的权重" class="headerlink" title="4.4.2 选择器的权重"></a>4.4.2 选择器的权重</h5><p>  选择器的权重是分为4个等级，先祭出一张图片如下</p>
-<div style="align: center">
-  <img src="https://images2018.cnblogs.com/blog/734402/201803/734402-20180315180252953-849133314.png" srcset="/img/loading.gif"/>
-</div>
-
-<ul>
-<li><p>权重的分类标准</p>
-<blockquote>
-<ol>
-<li><p>style=内联的权重最高为 1000</p>
-</li>
-<li><p>id类型的选择器权重为 0100</p>
-</li>
-<li><p><code>class</code>、伪类、属性选择器的权重为 0010</p>
-</li>
-<li><p>元素、伪元素选择器的权重为 0001</p>
-</li>
-<li><p>*，&gt;（父子选择），+（同胞选择）权重为0</p>
-</li>
-</ol>
-</blockquote>
-</li>
-<li><p>权重的计算公式<br>  权重 = 第1级选择器个数 * 1000， 第2级选择器个数 * 100 ， 第3级选择器个数 * 10 ，第4级选择器个数 * 1</p>
-</li>
-<li><p>权重的比对原则</p>
-<ul>
-<li>从高位到低位依次比对</li>
-<li>条件相同的，后面的样式会覆盖前面的</li>
-<li>css属性后面加!important的时候，优先级最高（比内联样式都高）</li>
-</ul>
-<p><img src="images/css-weight-result.png" srcset="/img/loading.gif" alt="权重对比结果"></p>
-</li>
-</ul>
-<h3 id="五、JS的事件"><a href="#五、JS的事件" class="headerlink" title="五、JS的事件"></a>五、JS的事件</h3><h4 id="5-1-事件传递机制"><a href="#5-1-事件传递机制" class="headerlink" title="5.1 事件传递机制"></a>5.1 事件传递机制</h4><ul>
-<li>两个阶段：捕获阶段：父组件传递到子组件；冒泡阶段：子组件传递到父组件。事件传递顺序：从捕获-&gt;目标阶段-&gt;冒泡阶段</li>
-<li><code>target</code>、<code>currentTarget</code>、<code>this</code><ul>
-<li><code>target</code>：触发事件的对象</li>
-<li><code>currentTarget</code>：绑定事件的对象</li>
-<li><code>this</code>：</li>
-<li>当处于目标阶段的时候，<code>target</code>和<code>currentTarget</code>是相等的。在捕获和冒泡阶段，<code>target</code>是触发事件的控件为子控件；<code>currentTarget</code>一般是父组件。</li>
-</ul>
-</li>
-</ul>
 
             </div>
             <hr>
